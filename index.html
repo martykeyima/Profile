@@ -153,26 +153,22 @@
         .active {
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
-
-        .hide {
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        }
     </style>
 </head>
 
-<body onload="setTimeout(add, 500, home2)">
+<body onload="setTimeout(add, 500, anime[0])">
     <div class="container">
         <div class="left">
             <ul class="menu">
-                <li><a id="home" href="#">
+                <li><a onclick="check('home')" href="#">
                         <i class="fa-solid fa-house"></i>
                         Home
                     </a></li>
-                <li><a id="about" href="#">
+                <li><a onclick="check('about')" href="#">
                         <i class="fa-solid fa-user"></i>
                         About
                     </a></li>
-                <li><a id="contact" href="#">
+                <li><a onclick="check('contact')" href="#">
                         <i class="fa-solid fa-envelope-circle-check"></i>
                         Contact
                     </a></li>
@@ -191,15 +187,15 @@
 
         <div class="right">
 
-            <div class="home box">
+            <div id="home" class="home box">
                 <h1>Master M</h1>
                 <p style="text-align: center;">Commy</p>
             </div>
-            <div class="about box">
+            <div id="about" class="about box">
                 <h1>about</h1>
                 <p style="text-align: center;">Commy</p>
             </div>
-            <div class="contact box">
+            <div id="contact" class="contact box">
                 <h1>Contact</h1>
                 <p style="text-align: center;">Commy</p>
             </div>
@@ -208,39 +204,23 @@
 
     <script>
 
-        let home = document.querySelector('#home')
-        let home2 = document.querySelector('.home')
+        let anime = document.querySelectorAll('.box')
 
-        let about = document.querySelector('#about')
-        let about2 = document.querySelector('.about')
-
-        let contact = document.querySelector('#contact')
-        let contact2 = document.querySelector('.contact')
+        //function for animation
         function add(ele) {
             ele.classList.add('active')
         }
 
-
-
-        home.addEventListener('click', async (e) => {
-            e.preventDefault()
-            about2.classList.remove('active')
-            contact2.classList.remove('active')
-            setTimeout(add, 500, home2);
-            console.log('commy')
-        })
-        about.addEventListener('click', async (e) => {
-            e.preventDefault()
-            home2.classList.remove('active')
-            contact2.classList.remove('active')
-            setTimeout(add, 500, about2);
-        })
-        contact.addEventListener('click', async (e) => {
-            e.preventDefault()
-            home2.classList.remove('active')
-            about2.classList.remove('active')
-            setTimeout(add, 500, contact2);
-        })
+        function check(txt) {
+            for (let i = 0; i < anime.length; i++) {
+                if (anime[i].getAttribute('id') == txt) {
+                    var n = i
+                } else {
+                    anime[i].classList.remove('active')
+                }
+            }
+            setTimeout(add, 500, anime[n]);
+        }
     </script>
 </body>
 
