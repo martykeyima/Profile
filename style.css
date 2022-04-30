@@ -19,6 +19,7 @@ a {
     display: flex;
     position: relative;
 }
+
 .bar {
     display: none;
     position: fixed;
@@ -26,9 +27,11 @@ a {
     top: 20px;
     padding: .5rem 1rem;
     transition: 0.3s ease-in-out;
-}
-.fa-bars {
     color: white;
+    z-index: 99;
+}
+
+.fa-bars {
     background: #0F2027;
     padding: .5rem 1rem;
     border-radius: 50px;
@@ -38,9 +41,11 @@ a {
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
 .fa-xmark {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
 }
+
 .left {
     display: flex;
     height: 100%;
@@ -75,7 +80,7 @@ ul.menu li a i {
 }
 
 .left .head {
-    width: 420px;
+    min-width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -173,9 +178,33 @@ ul.menu li a i {
 
 @media only screen and (max-width: 960px) {
     .left {
+        position: absolute;
+        right: 0;
+        z-index: 9;
+    }
+    .left .head img {
+        width: 90px;
+        height: 90px;
+    }
+
+    ul.menu {
         display: none;
     }
+
     .bar {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .left {
+        width: 300px;
+    }
+    .right h1 {
+        font-size: 40px;
+    }
+
+    .right p {
+        font-size: 15px;
     }
 }
