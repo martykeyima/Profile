@@ -8,7 +8,7 @@
     <title>Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body onload="setTimeout(add2, 1000, anime[0])">
@@ -33,20 +33,7 @@
                     alt="">
                 <h1>Master M</h1>
                 <p>do something</p>
-                <ul id="ulres">
-                    <li><a onclick="check('home')">
-                            <i class="fa-solid fa-house"></i>
-                            Home
-                        </a></li>
-                    <li><a onclick="check('about')">
-                            <i class="fa-solid fa-user"></i>
-                            About
-                        </a></li>
-                    <li><a onclick="check('contact')">
-                            <i class="fa-solid fa-envelope-circle-check"></i>
-                            Contact
-                        </a></li>
-                </ul>
+
                 <span>
                     <a href="#"><i id="awe" class="fa-brands fa-linkedin-in"></i></a>
                     <a href="#"><i id="awe" class="fa-brands fa-facebook-f"></i></a>
@@ -69,24 +56,48 @@
                 <h1>Contact</h1>
                 <p style="text-align: center;">Commy</p>
             </div>
-            
+
         </div>
         <i class="fa-solid fa-bars bar"></i>
+
+        <div class="ul-right">
+            <img src="https://images.unsplash.com/photo-1587723958656-ee042cc565a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                alt="">
+            <h1>Master M</h1>
+            <p>do something</p>
+            <ul class="">
+                <li><a onclick="check('home')">
+                        <i class="fa-solid fa-house"></i>
+                        home
+                    </a></li>
+                <li><a onclick="check('about')">
+                        <i class="fa-solid fa-user"></i>
+                        About
+                    </a></li>
+                <li><a onclick="check('contact')">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                        Contact
+                    </a></li>
+            </ul>
+            <span>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </span>
+        </div>
     </div>
 
     <script>
-
+        let n = 1
         let anime = document.querySelectorAll('.box')
         let bar = document.querySelector('.bar')
-        let left = document.querySelector('.left')
+        let ul_right = document.querySelector('.ul-right')
+        let xmark = document.querySelector('.xmark')
 
-        bar.addEventListener('click', function() {
+        bar.addEventListener('click', function () {
             bar.classList.toggle('fa-bars')
             bar.classList.toggle('fa-xmark')
-            left.classList.add('active2')
-            console.log(left)
+            ul_right.classList.toggle('active2')
         })
-
 
         //function for change page
         function add(ele) {
@@ -98,6 +109,11 @@
         }
         //for change page
         function check(txt) {
+            ul_right.style.display = 'none'
+            ul_right.classList.remove('active2')
+            ul_right.style.display = 'flex'
+            bar.classList.toggle('fa-bars')
+            bar.classList.toggle('fa-xmark')
             for (let i = 0; i < anime.length; i++) {
                 if (anime[i].getAttribute('id') == txt) {
                     setTimeout(add, 500, anime[i]);

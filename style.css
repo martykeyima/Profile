@@ -32,9 +32,9 @@ a {
 }
 
 .fa-bars {
-    background: #0F2027;
     padding: .5rem 1rem;
     border-radius: 50px;
+    background: #0F2027;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
     /* Chrome 10-25, Safari 5.1-6 */
@@ -46,14 +46,81 @@ a {
     transform: rotate(180deg);
 }
 
+.ul-right {
+    top: 0;
+    right: 0;
+    width: 360px;
+    height: 100%;
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: 55;
+    position: absolute;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+}
+.ul-right img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    margin: 50px 0;
+    border: 4px solid white;
+}
+.ul-right h1 {
+    color: white;
+    font-size: 30px;
+}
+.ul-right p {
+    color: white;
+    margin: 20px 0;
+}
+.ul-right ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ul-right ul li a{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    line-height: 40px;
+    font-size: 10px;
+}
+.ul-right ul li a i{
+    margin-top: 20px;
+    font-size: 20px;
+}
+.ul-right span{
+    margin-top: 20px;
+    /* background-color: red; */
+    width: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.ul-right span a{
+    color: white;
+    font-size: 12px;
+}
+
 .left {
     display: flex;
     height: 100vh;
 }
 
-#ulres {
-    display: none;
-}
+
 
 ul.menu {
     width: 80px;
@@ -179,47 +246,18 @@ ul.menu li a i {
 .active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
+
 .active2 {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    z-index: 9;
 }
 
 @media only screen and (max-width: 960px) {
+    
     .left {
-        position: absolute;
-        right: 0;
-        z-index: 9;
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        transition: 0.3s ease-in-out;
-    }
-    .left .head img {
-        width: 90px;
-        height: 90px;
-        margin: 30px 0;
-        
-    }
-    .left .head ul {
-        list-style: none;
-        
-    }
-    .left .head ul li {
-        margin: 20px 0;
-        
-    }
-    .left .head ul li a {
-        text-decoration: none;
-        /* color: black; */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: 0.3s ease-in-out;
-        line-height: 40px;
+        display: none;
     }
 
-
-    #ulres {
-        display: block;
-    }
+    
 
     ul.menu {
         display: none;
@@ -231,10 +269,7 @@ ul.menu li a i {
 }
 
 @media only screen and (max-width: 480px) {
-    .left {
-        max-width: 480px;
-        
-    }
+
     .right h1 {
         font-size: 40px;
     }
