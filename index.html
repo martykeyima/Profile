@@ -34,6 +34,10 @@
             position: fixed;
             right: 20px;
             top: 20px;
+            padding: .5rem 1rem;
+            transition: 0.3s ease-in-out;
+        }
+        .fa-bars {
             color: white;
             background: #0F2027;
             padding: .5rem 1rem;
@@ -44,7 +48,9 @@
             background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
             /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
-
+        .fa-xmark {
+            transform: rotate(360deg);
+        }
         .left {
             display: flex;
             height: 100%;
@@ -236,8 +242,15 @@
     <script>
 
         let anime = document.querySelectorAll('.box')
+        let bar = document.querySelector('.bar')
 
-        //function for animation
+        bar.addEventListener('click', function() {
+            bar.classList.toggle('fa-bars')
+            bar.classList.toggle('fa-xmark')
+        })
+
+
+        //function for change page
         function add(ele) {
             ele.classList.add('active')
         }
@@ -245,7 +258,7 @@
         function add2(ele) {
             ele.classList.add('active')
         }
-
+        //for change page
         function check(txt) {
             for (let i = 0; i < anime.length; i++) {
                 if (anime[i].getAttribute('id') == txt) {
