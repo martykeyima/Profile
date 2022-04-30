@@ -66,15 +66,15 @@
             <h1>Master M</h1>
             <p>do something</p>
             <ul class="">
-                <li><a onclick="check('home')">
+                <li><a onclick="check2('home')">
                         <i class="fa-solid fa-house"></i>
                         home
                     </a></li>
-                <li><a onclick="check('about')">
+                <li><a onclick="check2('about')">
                         <i class="fa-solid fa-user"></i>
                         About
                     </a></li>
-                <li><a onclick="check('contact')">
+                <li><a onclick="check2('contact')">
                         <i class="fa-solid fa-envelope-circle-check"></i>
                         Contact
                     </a></li>
@@ -109,6 +109,18 @@
         }
         //for change page
         function check(txt) {
+            bar.classList.toggle('fa-bars')
+            bar.classList.toggle('fa-xmark')
+            for (let i = 0; i < anime.length; i++) {
+                if (anime[i].getAttribute('id') == txt) {
+                    setTimeout(add, 500, anime[i]);
+                } else {
+                    anime[i].classList.remove('active')
+                }
+            }
+        }
+
+        function check2(txt) {
             ul_right.style.display = 'none'
             ul_right.classList.remove('active2')
             ul_right.style.display = 'flex'
@@ -116,7 +128,7 @@
             bar.classList.toggle('fa-xmark')
             for (let i = 0; i < anime.length; i++) {
                 if (anime[i].getAttribute('id') == txt) {
-                    setTimeout(add, 500, anime[i]);
+                    anime[i].classList.add('active')
                 } else {
                     anime[i].classList.remove('active')
                 }
