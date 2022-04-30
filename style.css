@@ -198,7 +198,7 @@ ul.menu li a i {
 
 @media only screen and (max-width: 480px) {
     .left {
-        min-width: 50px;
+        min-width: 375px;
         
     }
     .right h1 {
