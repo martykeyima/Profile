@@ -51,6 +51,10 @@ a {
     height: 100vh;
 }
 
+#ulres {
+    display: none;
+}
+
 ul.menu {
     width: 80px;
     display: flex;
@@ -185,6 +189,24 @@ ul.menu li a i {
     .left .head img {
         width: 90px;
         height: 90px;
+        margin: 30px 0;
+        
+    }
+    .left .head ul {
+        list-style: none;
+        
+    }
+    .left .head ul li a {
+        text-decoration: none;
+        /* color: black; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    #ulres {
+        display: block;
     }
 
     ul.menu {
@@ -198,7 +220,7 @@ ul.menu li a i {
 
 @media only screen and (max-width: 480px) {
     .left {
-        min-width: 375px;
+        max-width: 480px;
         
     }
     .right h1 {
