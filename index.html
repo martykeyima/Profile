@@ -78,10 +78,13 @@
 
         let anime = document.querySelectorAll('.box')
         let bar = document.querySelector('.bar')
+        let left = document.querySelector('.left')
 
         bar.addEventListener('click', function() {
             bar.classList.toggle('fa-bars')
             bar.classList.toggle('fa-xmark')
+            left.classList.add('active2')
+            console.log(left)
         })
 
 
