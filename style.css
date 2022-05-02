@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,11 +7,13 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 a {
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 .container {
@@ -244,6 +247,37 @@ ul.menu li a i {
     flex-direction: column;
 }
 
+.toy {
+    text-align: center;
+    padding: 2rem;
+}
+.toy h1 {
+    margin: 70px 0;
+}
+
+.toy p {
+    margin: 20px;
+}
+.toy a{
+    position: relative;
+}
+.toy a:hover::after {
+    width: 100%;
+    
+}
+.toy a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: #000;
+    top: 99%;
+    transition: all 0.3s ease;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 .active {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -271,11 +305,11 @@ ul.menu li a i {
 
 @media only screen and (max-width: 480px) {
 
-    .right h1 {
+    .box h1 {
         font-size: 40px;
     }
 
-    .right p {
+    .box p {
         font-size: 15px;
     }
 }

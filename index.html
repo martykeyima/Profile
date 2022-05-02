@@ -27,6 +27,10 @@
                         <i class="fa-solid fa-envelope-circle-check"></i>
                         Contact
                     </a></li>
+                <li><a onclick="check('toy')">
+                        <i class="fa-solid fa-gift"></i>
+                        toy
+                    </a></li>
             </ul>
             <div class="head">
                 <img src="https://images.unsplash.com/photo-1587723958656-ee042cc565a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
@@ -56,6 +60,15 @@
                 <h1>Contact</h1>
                 <p style="text-align: center;">Commy</p>
             </div>
+            <div id="toy" class="toy box">
+                <h1>Toy</h1>
+                <p><a href="https://www.reg.kmitl.ac.th/index/" target="_blank">
+                    ตารางสอบ
+                </a></p>
+                <p><a href="https://www.reg.kmitl.ac.th/index/" target="_blank">
+                    todo list
+                </a></p>
+                
 
         </div>
         <i class="fa-solid fa-bars bar"></i>
@@ -77,6 +90,10 @@
                 <li><a onclick="check2('contact')">
                         <i class="fa-solid fa-envelope-circle-check"></i>
                         Contact
+                    </a></li>
+                <li><a onclick="check2('toy')">
+                        <i class="fa-solid fa-gift"></i>
+                        toy
                     </a></li>
             </ul>
             <span>
@@ -120,9 +137,13 @@
             }
         }
 
+        function remove() {
+            ul_right.classList.remove('active2')
+        }
+
         function check2(txt) {
             ul_right.style.display = 'none'
-            ul_right.classList.remove('active2')
+            setTimeout(remove, 100);
             ul_right.style.display = 'flex'
             bar.classList.toggle('fa-bars')
             bar.classList.toggle('fa-xmark')
