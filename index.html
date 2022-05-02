@@ -62,100 +62,117 @@
             </div>
             <div id="toy" class="toy box">
                 <h1>Toy</h1>
+                <p><a href="#" onclick="check3('final')">
+                        ตารางสอบ
+                    </a></p>
                 <p><a href="https://www.reg.kmitl.ac.th/index/" target="_blank">
-                    ตารางสอบ
-                </a></p>
-                <p><a href="https://www.reg.kmitl.ac.th/index/" target="_blank">
-                    todo list
-                </a></p>
-                
+                        todo list
+                    </a></p>
+            </div>
+            <div id="final" class="home box">
+                <h1>final</h1>
+                <img src="img/final.jpeg" alt="" width="400px">
+            </div>
 
+            <!-- hamberger -->
+            <i class="fa-solid fa-bars bar"></i>
+
+            <div class="ul-right">
+                <img src="https://images.unsplash.com/photo-1587723958656-ee042cc565a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    alt="">
+                <h1>Master M</h1>
+                <p>do something</p>
+                <ul class="">
+                    <li><a onclick="check2('home')">
+                            <i class="fa-solid fa-house"></i>
+                            home
+                        </a></li>
+                    <li><a onclick="check2('about')">
+                            <i class="fa-solid fa-user"></i>
+                            About
+                        </a></li>
+                    <li><a onclick="check2('contact')">
+                            <i class="fa-solid fa-envelope-circle-check"></i>
+                            Contact
+                        </a></li>
+                    <li><a onclick="check2('toy')">
+                            <i class="fa-solid fa-gift"></i>
+                            toy
+                        </a></li>
+                </ul>
+                <span>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </span>
+            </div>
         </div>
-        <i class="fa-solid fa-bars bar"></i>
 
-        <div class="ul-right">
-            <img src="https://images.unsplash.com/photo-1587723958656-ee042cc565a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDJ8fHByb2ZpbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
-                alt="">
-            <h1>Master M</h1>
-            <p>do something</p>
-            <ul class="">
-                <li><a onclick="check2('home')">
-                        <i class="fa-solid fa-house"></i>
-                        home
-                    </a></li>
-                <li><a onclick="check2('about')">
-                        <i class="fa-solid fa-user"></i>
-                        About
-                    </a></li>
-                <li><a onclick="check2('contact')">
-                        <i class="fa-solid fa-envelope-circle-check"></i>
-                        Contact
-                    </a></li>
-                <li><a onclick="check2('toy')">
-                        <i class="fa-solid fa-gift"></i>
-                        toy
-                    </a></li>
-            </ul>
-            <span>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            </span>
-        </div>
-    </div>
+        <script>
+            let n = 1
+            let anime = document.querySelectorAll('.box')
+            let bar = document.querySelector('.bar')
+            let ul_right = document.querySelector('.ul-right')
+            let xmark = document.querySelector('.xmark')
 
-    <script>
-        let n = 1
-        let anime = document.querySelectorAll('.box')
-        let bar = document.querySelector('.bar')
-        let ul_right = document.querySelector('.ul-right')
-        let xmark = document.querySelector('.xmark')
+            bar.addEventListener('click', function () {
+                bar.classList.toggle('fa-bars')
+                bar.classList.toggle('fa-xmark')
+                ul_right.classList.toggle('active2')
+            })
 
-        bar.addEventListener('click', function () {
-            bar.classList.toggle('fa-bars')
-            bar.classList.toggle('fa-xmark')
-            ul_right.classList.toggle('active2')
-        })
-
-        //function for change page
-        function add(ele) {
-            ele.classList.add('active')
-        }
-        //for first load
-        function add2(ele) {
-            ele.classList.add('active')
-        }
-        //for change page
-        function check(txt) {
-            bar.classList.toggle('fa-bars')
-            bar.classList.toggle('fa-xmark')
-            for (let i = 0; i < anime.length; i++) {
-                if (anime[i].getAttribute('id') == txt) {
-                    setTimeout(add, 500, anime[i]);
-                } else {
-                    anime[i].classList.remove('active')
+            //function for change page
+            function add(ele) {
+                ele.classList.add('active')
+            }
+            //for first load
+            function add2(ele) {
+                ele.classList.add('active')
+            }
+            //for change page
+            function check(txt) {
+                // bar.classList.toggle('fa-bars')
+                // bar.classList.toggle('fa-xmark')
+                for (let i = 0; i < anime.length; i++) {
+                    if (anime[i].getAttribute('id') == txt) {
+                        setTimeout(add, 500, anime[i]);
+                    } else {
+                        anime[i].classList.remove('active')
+                    }
                 }
             }
-        }
 
-        function remove() {
-            ul_right.classList.remove('active2')
-        }
+            function remove() {
+                ul_right.classList.remove('active2')
+            }
 
-        function check2(txt) {
-            ul_right.style.display = 'none'
-            setTimeout(remove, 100);
-            ul_right.style.display = 'flex'
-            bar.classList.toggle('fa-bars')
-            bar.classList.toggle('fa-xmark')
-            for (let i = 0; i < anime.length; i++) {
-                if (anime[i].getAttribute('id') == txt) {
-                    anime[i].classList.add('active')
-                } else {
-                    anime[i].classList.remove('active')
+            function check2(txt) {
+                ul_right.style.display = 'none'
+                setTimeout(remove, 100);
+                ul_right.style.display = 'flex'
+                bar.classList.toggle('fa-bars')
+                bar.classList.toggle('fa-xmark')
+                for (let i = 0; i < anime.length; i++) {
+                    if (anime[i].getAttribute('id') == txt) {
+                        anime[i].classList.add('active')
+                    } else {
+                        anime[i].classList.remove('active')
+                    }
                 }
             }
-        }
-    </script>
+
+            //for toy
+            function check3(txt) {
+                bar.classList.add('fa-bars')
+                bar.classList.remove('fa-xmark')
+                for (let i = 0; i < anime.length; i++) {
+                    if (anime[i].getAttribute('id') == txt) {
+                        setTimeout(add, 500, anime[i]);
+                    } else {
+                        anime[i].classList.remove('active')
+                    }
+                }
+            }
+        </script>
 </body>
 
 </html>
