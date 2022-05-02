@@ -24,6 +24,7 @@ a {
 }
 
 .bar {
+    cursor: pointer;
     display: none;
     position: fixed;
     right: 20px;
