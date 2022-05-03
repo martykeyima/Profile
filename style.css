@@ -69,6 +69,8 @@ a {
     /* justify-content: center; */
     align-items: center;
     flex-direction: column;
+    overflow-y: auto;
+    padding-bottom: 20px;
 
 }
 .ul-right img {
@@ -221,6 +223,8 @@ ul.menu li a i {
     align-items: center;
     flex-direction: column;
     /* display: none; */
+    height: 100%;
+    width: 100%;
 }
 
 .box h1 {
@@ -251,6 +255,8 @@ ul.menu li a i {
 .toy {
     text-align: center;
     padding: 2rem;
+    
+
 }
 .toy h1 {
     margin: 70px 0;
